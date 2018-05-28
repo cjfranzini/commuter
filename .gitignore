@@ -1,6 +1,9 @@
 # sqlite3
 *.sqlite3
 
+# csv
+*.csv
+
 # pycache
 commuter/__pycache__/
 subway/__pycache__/
