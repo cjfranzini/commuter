@@ -4,3 +4,4 @@
 # pycache
 commuter/__pycache__/
 subway/__pycache__/
+subway/migrations/__pycache__/
