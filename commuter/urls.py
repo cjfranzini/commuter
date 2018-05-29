@@ -18,6 +18,6 @@ from django.contrib import admin
 from subway import views
 
 urlpatterns = [
-    url('', views.index),
+    url('', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
 ]
