@@ -1,0 +1,94 @@
+{% extends 'subway/base_generic.html' %}
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Commuter Dashboard</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Recent Commutes</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Dest
+                        </th>
+                        <th>
+                            Depart
+                        </th>
+                        <th>
+                            Train #1
+                        </th>
+                        <th>
+                            Train #2
+                        </th>
+                        <th>
+                            Train #3
+                        </th>
+                        <th>
+                            Arrive
+                        </th>
+                        <th>
+                            Duration (min)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for trip in trip_list %}
+                        <tr>
+                            <td>
+                                {{ trip.date }}
+                            </td>
+                            <td>
+                                {{ trip.destination.name.capitalize }}
+                            </td>
+                            <td>
+                                {{ trip.departure }}
+                            </td>
+                            <td>
+                                {{ trip.train_0.symbol }}
+                            </td>
+                            <td>
+                                {% if trip.train_1 %}
+                                    {{ trip.train_1.symbol }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if trip.train_2 %}
+                                    {{ trip.train_2 }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {{ trip.arrival }}
+                            </td>
+                            <td>
+                                {{ trip.duration }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated ?</div>
+      </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+{% if trip_list %}
+<table>
+    
+</table>
+{% endif %}
+{% endblock %}

@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from subway import views
 
 urlpatterns = [
+    url('', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
 ]
