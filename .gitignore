@@ -1,6 +1,8 @@
 # sqlite3
 *.sqlite3
 
+*.json
+
 # csv
 *.csv
 *.swp
