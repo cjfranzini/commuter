@@ -1,17 +1,18 @@
 {% extends 'subway/base_generic.html' %}
 {% block content %}
 <div class="content-wrapper">
-    <div class="container-fluid">
-      <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item active">
-          <a href="{% url 'index' %}">Dashboard</a>
-        </li>
-      </ol>
-      <!-- Example DataTables Card-->
+  <div class="container-fluid">
+    <!--breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'commutes_index' %}">Commutes</a>
+      </li>
+      <li class="breadcrumb-item active">Work Trips</li>
+    </ol>
+    <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Recent Commutes</div>
+          <i class="fa fa-table"></i> Recent Work Commutes</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -44,7 +45,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for trip in trip_list %}
+                    {% for trip in work_trips %}
                         <tr>
                             <td>
                                 {{ trip.date }}
@@ -85,9 +86,5 @@
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
-{% if trip_list %}
-<table>
-    
-</table>
-{% endif %}
 {% endblock %}
+
