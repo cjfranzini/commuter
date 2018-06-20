@@ -11,6 +11,40 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
+          Summary Stats
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-4 col-sm-6 mb-4">
+              <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                  <div class=mr-5>
+                      Trips: {{ num_trips }} 
+                  </div>
+                  <div class="mr-5">
+                      Shortest: {{ short_trip }} min
+                  </div>
+                  <div class="mr-5">
+                      Longest: {{ long_trip }} min
+                  </div>
+                  <div class="mr-5">
+                      Average: {{ avg_trip }} min
+                  </div>
+                  <div class="mr-5">
+                      Work Average: {{ work_avg }} min (N={{ work_count }})
+                  </div>
+                  <div class="mr-5">
+                      Home Average: {{ home_avg }} min (N={{ home_count }})
+                  </div>
+                  <div id="line-example"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">
           <i class="fa fa-table"></i> Recent Commutes</div>
         <div class="card-body">
           <div class="table-responsive">
@@ -85,9 +119,4 @@
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
-{% if trip_list %}
-<table>
-    
-</table>
-{% endif %}
 {% endblock %}
